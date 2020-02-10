@@ -1,21 +1,12 @@
-// Tic Tac Toe AI with Minimax Algorithm
-// The Coding Train / Daniel Shiffman
-// https://thecodingtrain.com/CodingChallenges/154-tic-tac-toe-minimax.html
-// https://youtu.be/I64-UTORVfU
-// https://editor.p5js.org/codingtrain/sketches/0zyUhZdJD
-
 let board = [
     ['', '', ''],
     ['', '', ''],
     ['', '', '']
 ];
 
-let tie = 0;
-let wins = 0;
-let losses = 0;
 
-let w; // = width / 3;
-let h; // = height / 3;
+let w;
+let h;
 
 let ai = 'X';
 let human = 'O';
@@ -25,7 +16,11 @@ function setup() {
     createCanvas(400, 400);
     w = width / 3;
     h = height / 3;
-    bestMove();
+    let i = Math.round(Math.random());
+    console.log(i);
+    if (i) {
+        bestMove();
+    }
 }
 
 function equals3(a, b, c) {
@@ -68,7 +63,6 @@ function checkWinner() {
 
     if (winner == null && openSpots == 0) {
         return 'tie';
-        tie++;
     } else {
         return winner;
     }
